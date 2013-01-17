@@ -1,3 +1,5 @@
+# coding=UTF-8
+
 import re
 import urllib
 
@@ -5,7 +7,9 @@ import urllib
 
 
 #öffnet die die URL, liest sie, und speichert sie unter "webpage"
-webpage = urllib.urlopen("http://www.spiegel.de/").read()
+#encode in UTF-8, wegen den doitschen sonderzeichen
+url = u"http://www.spiegel.de/"
+webpage = urllib.urlopen(url.encode("utf-8")).read()
 
 
 #such nach den Überschriften der einzelnen Artikel, such nach dem (__),
